@@ -1,5 +1,5 @@
 from behave import given, when, then
-from calc import addition, subtraction
+from calc import addition, subtraction, multiplication, division, modulo
 
 
 @given('Calculator app is running')
@@ -18,6 +18,24 @@ def step_impl(context, a, b):
 def step_impl(context, a, b):
     print(f'STEP: User inputs "{a}" + "{b}" to calculator')
     context.result = subtraction(int(a), int(b))
+
+
+@when('User inputs "{a}" * "{b}" to calculator')
+def step_impl(context, a, b):
+    print(f'STEP: User inputs "{a}" * "{b}" to calculator')
+    context.result = multiplication(float(a), float(b))
+
+
+@when('User inputs "{a}" / "{b}" to calculator')
+def step_impl(context, a, b):
+    print(f'STEP: User inputs "{a}" / "{b}" to calculator')
+    context.result = division(float(a), float(b))
+
+
+@when('User inputs "{a}" % "{b}" to calculator')
+def step_impl(context, a, b):
+    print(f'STEP: User inputs "{a}" % "{b}" to calculator')
+    context.result = modulo(float(a), float(b))
 
 
 @then('Result is "{out}"')

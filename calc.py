@@ -3,7 +3,7 @@ def main():
     #op_index = get_operator(formula)
     op_index = 1
     operator = formula[op_index]
-    numbers = formula.split('-')
+    numbers = formula.split('*')
     firstnum = float(numbers[0])
     secondnum = float(numbers[1])
 
