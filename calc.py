@@ -1,11 +1,10 @@
 def main():
     formula = input('What do you want to do? \n')
-    #op_index = get_operator(formula)
-    op_index = 1
+    op_index = get_operator(formula)
     operator = formula[op_index]
     numbers = formula.split('*')
-    firstnum = float(numbers[0])
-    secondnum = float(numbers[1])
+    firstnum = convert_input(numbers[0])
+    secondnum = convert_input(numbers[1])
 
     if operator == '+':
         result = addition(firstnum, secondnum)
@@ -27,23 +26,38 @@ def get_operator(user_formula):
     return 1
 
 
+def convert_input(user_num):
+    a = float(user_num)
+    return a
+
+
 def addition(a, b):
+    a = convert_input(a)
+    b = convert_input(b)
     return a + b
 
 
 def subtraction(a, b):
+    a = convert_input(a)
+    b = convert_input(b)
     return a - b
 
 
 def multiplication(a, b):
+    a = convert_input(a)
+    b = convert_input(b)
     return a * b
 
 
 def division(a, b):
+    a = convert_input(a)
+    b = convert_input(b)
     return a / b
 
 
 def modulo(a, b):
+    a = convert_input(a)
+    b = convert_input(b)
     return a % b
 
 

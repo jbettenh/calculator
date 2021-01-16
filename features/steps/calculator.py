@@ -11,31 +11,31 @@ def step_impl(context):
 @when('User inputs "{a}" + "{b}" to calculator')
 def step_impl(context, a, b):
     print(f'STEP: User inputs "{a}" + "{b}" to calculator')
-    context.result = addition(int(a), int(b))
+    context.result = addition(a, b)
 
 
 @when('User inputs "{a}" - "{b}" to calculator')
 def step_impl(context, a, b):
     print(f'STEP: User inputs "{a}" + "{b}" to calculator')
-    context.result = subtraction(int(a), int(b))
+    context.result = subtraction(a, b)
 
 
 @when('User inputs "{a}" * "{b}" to calculator')
 def step_impl(context, a, b):
     print(f'STEP: User inputs "{a}" * "{b}" to calculator')
-    context.result = multiplication(float(a), float(b))
+    context.result = multiplication(a, b)
 
 
 @when('User inputs "{a}" / "{b}" to calculator')
 def step_impl(context, a, b):
     print(f'STEP: User inputs "{a}" / "{b}" to calculator')
-    context.result = division(float(a), float(b))
+    context.result = division(a, b)
 
 
 @when('User inputs "{a}" % "{b}" to calculator')
 def step_impl(context, a, b):
     print(f'STEP: User inputs "{a}" % "{b}" to calculator')
-    context.result = modulo(float(a), float(b))
+    context.result = modulo(a, b)
 
 
 @then('Result is "{out}"')
