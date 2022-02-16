@@ -48,7 +48,13 @@ Feature: showing off calculator
     Then Result is "10"
 
 
-  Scenario: Check modulo
+  Scenario Outline: Check modulo
     Given Calculator app is running
-    When User inputs "88" % "2" to calculator
-    Then Result is "0"
+    When User inputs "<a>" % "<b>" to calculator
+    Then Result is "<output>"
+
+    Examples:
+      | a | b | output |
+      | 0 | 2 | 0      |
+      | 3 | 2 | 1      |
+      | 4 | 2 | 0      |
