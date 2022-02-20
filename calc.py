@@ -1,10 +1,15 @@
 def main():
+    """
     formula = input('What do you want to do? \n')
     op_index = get_operator(formula)
     operator = formula[op_index]
-    numbers = formula.split('*')
+    numbers = formula.split()
     firstnum = convert_input(numbers[0])
     secondnum = convert_input(numbers[1])
+    """
+    operator = input('What do you want to do? \n')
+    firstnum = convert_input(input('Enter the first number: \n'))
+    secondnum = convert_input(input('Enter the second number:  \n'))
 
     if operator == '+':
         result = addition(firstnum, secondnum)
