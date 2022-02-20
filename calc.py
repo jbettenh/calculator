@@ -8,19 +8,19 @@ def main():
     secondnum = convert_input(numbers[1])
     """
     operator = input('What do you want to do? \n')
-    firstnum = convert_input(input('Enter the first number: \n'))
-    secondnum = convert_input(input('Enter the second number:  \n'))
+    first_number = convert_input(input('Enter the first number: \n'))
+    second_number = convert_input(input('Enter the second number:  \n'))
 
     if operator == '+':
-        result = addition(firstnum, secondnum)
+        result = addition(first_number, second_number)
     elif operator == '-':
-        result = subtraction(firstnum, secondnum)
+        result = subtraction(first_number, second_number)
     elif operator == '*':
-        result = multiplication(firstnum, secondnum)
+        result = multiplication(first_number, second_number)
     elif operator == '/':
-        result = division(firstnum, secondnum)
+        result = division(first_number, second_number)
     elif operator == '%':
-        result = modulo(firstnum, secondnum)
+        result = modulo(first_number, second_number)
     else:
         print(f'No formula found: {formula}')
 
@@ -32,8 +32,11 @@ def get_operator(user_formula):
 
 
 def convert_input(user_num):
-    a = float(user_num)
-    return a
+    try:
+        number = float(user_num)
+        return number
+    except ValueError:
+        print(f"Couldn\'t convert {user_num} to a float")
 
 
 def addition(a, b):
